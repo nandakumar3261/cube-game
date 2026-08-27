@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CUBE Game — Admin Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">CUBE GAME <span class="tag">admin</span></div>
+    <button id="logoutBtn" class="ghost-btn">Log out</button>
+  </header>
+
+  <main class="dash">
+
+    <section class="panel">
+      <h2>Add a student</h2>
+      <form id="addForm" class="grid-form">
+        <input name="rollNumber" placeholder="Roll number" required>
+        <input name="name" placeholder="Name" required>
+        <input name="college" placeholder="College" required>
+        <input name="branch" placeholder="Branch" required>
+        <input name="section" placeholder="Section" required>
+        <button type="submit">Add student</button>
+      </form>
+      <p id="addStatus" class="status-text"></p>
+    </section>
+
+    <section class="panel">
+      <h2>Bulk import (CSV)</h2>
+      <p class="sub">Header row required: <code>rollNumber,name,college,branch,section</code></p>
+      <input type="file" id="csvFile" accept=".csv">
+      <button id="importBtn">Import CSV</button>
+      <p id="importStatus" class="status-text"></p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Students</h2>
+        <button id="refreshBtn" class="ghost-btn">Refresh</button>
+      </div>
+      <table class="data-table">
+        <thead>
+          <tr><th>Roll No.</th><th>Name</th><th>College</th><th>Branch</th><th>Section</th><th></th></tr>
+        </thead>
+        <tbody id="studentBody"></tbody>
+      </table>
+    </section>
+
+    <section class="panel danger">
+      <h2>Reset scores</h2>
+      <p class="sub">Clears every recorded game attempt. Student records are kept. Use this before a fresh event.</p>
+      <button id="clearScoresBtn" class="danger-btn">Clear all scores</button>
+      <p id="clearStatus" class="status-text"></p>
+    </section>
+
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CUBE Game</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-swatch sw-1"></span><span class="brand-swatch sw-2"></span><span class="brand-swatch sw-3"></span><span class="brand-swatch sw-4"></span><span class="brand-swatch sw-5"></span><span class="brand-swatch sw-6"></span>
+      <span class="brand-name">CUBE GAME</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- STAGE 1: identify player -->
+    <section id="idScreen" class="screen active">
+      <h1>Who's playing?</h1>
+      <p class="sub">Enter your roll number to load your details.</p>
+      <form id="idForm" class="id-form">
+        <input id="rollInput" type="text" placeholder="Roll number" autocomplete="off" required>
+        <button type="submit">Continue</button>
+      </form>
+      <p id="idError" class="error-text"></p>
+    </section>
+
+    <!-- STAGE 2: confirm + start -->
+    <section id="readyScreen" class="screen">
+      <div class="player-card">
+        <div class="player-name" id="pName">—</div>
+        <div class="player-meta" id="pMeta">—</div>
+      </div>
+      <p class="sub">Get your cube ready. Press <strong>Start</strong>, solve it, then press <strong>Stop</strong> the instant you're done.</p>
+      <button id="startBtn" class="start-btn">START</button>
+    </section>
+
+    <!-- STAGE 3: timer running -->
+    <section id="gameScreen" class="screen">
+      <div class="timer" id="timer">0.00s</div>
+      <button id="stopBtn" class="stop-btn">STOP</button>
+    </section>
+
+    <!-- STAGE 3b: ran out of time -->
+    <section id="timeUpScreen" class="screen">
+      <h1>Time's up!</h1>
+      <p class="sub">You didn't finish within the 2 minute limit, so this attempt wasn't saved and won't appear on the leaderboard.</p>
+      <button id="tryAgainBtn" class="start-btn">Try Again</button>
+    </section>
+
+    <!-- STAGE 4: result -->
+    <section id="resultScreen" class="screen">
+      <h1>Time recorded!</h1>
+      <div class="result-time" id="resultTime">0.00s</div>
+      <p class="sub" id="resultRank"></p>
+      <div class="result-actions">
+        <button id="playAgainBtn" class="start-btn">Next Attempt</button>
+        <a href="leaderboard.html" class="ghost-btn ghost-btn-block">View Leaderboard</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>

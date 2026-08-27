@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CUBE Game — Leaderboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-swatch sw-1"></span><span class="brand-swatch sw-2"></span><span class="brand-swatch sw-3"></span><span class="brand-swatch sw-4"></span><span class="brand-swatch sw-5"></span><span class="brand-swatch sw-6"></span>
+      <span class="brand-name">CUBE GAME</span>
+    </div>
+  </header>
+
+  <main class="lb-page">
+    <h1>Leaderboard</h1>
+    <p class="sub">Fastest solve per student. Refreshes automatically every 10 seconds.</p>
+
+    <form id="filterForm" class="lb-filters">
+      <input id="fCollege" type="text" placeholder="College (optional)">
+      <input id="fBranch" type="text" placeholder="Branch (optional)">
+      <input id="fSection" type="text" placeholder="Section (optional)">
+      <button type="submit">Filter</button>
+      <button type="button" id="clearFiltersBtn" class="ghost-btn">Clear</button>
+    </form>
+
+    <table class="lb-table">
+      <thead>
+        <tr><th>#</th><th>Name</th><th>Roll No.</th><th>College / Branch / Sec</th><th>Time</th></tr>
+      </thead>
+      <tbody id="lbBody"></tbody>
+    </table>
+  </main>
+
+  <script src="leaderboard.js"></script>
+</body>
+</html>
